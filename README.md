@@ -40,11 +40,13 @@ echo "export CARDCHAIN_PORT="31"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
 
-# download binary
+**download binary**
+```
 cd $HOME
 wget -O Cardchaind https://github.com/DecentralCardGame/Cardchain/releases/download/v0.16.0/Cardchaind
 chmod +x Cardchaind
 sudo mv Cardchaind /usr/local/bin
+```
 
 # config and init app
 Cardchaind config node tcp://localhost:${CARDCHAIN_PORT}657
