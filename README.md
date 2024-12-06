@@ -8,15 +8,6 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -y
 ```
 
-Node Name
-Wallet
-Port
-31
-Pruning
-Pruning Keep Recent
-100
-Pruning Interval
-19
 **install go, if needed**
 ```
 cd $HOME
@@ -48,11 +39,13 @@ chmod +x Cardchaind
 sudo mv Cardchaind /usr/local/bin
 ```
 
-# config and init app
+**config and init app**
+```
 Cardchaind config node tcp://localhost:${CARDCHAIN_PORT}657
 Cardchaind config keyring-backend os
 Cardchaind config chain-id cardtestnet-12
 Cardchaind init "test" --chain-id cardtestnet-12
+```
 
 # download genesis and addrbook
 wget -O $HOME/.cardchaind/config/genesis.json https://server-4.itrocket.net/testnet/cardchain/genesis.json
