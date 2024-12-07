@@ -47,9 +47,11 @@ Cardchaind config chain-id cardtestnet-12
 Cardchaind init "test" --chain-id cardtestnet-12
 ```
 
-# download genesis and addrbook
+**download genesis and addrbook**
+```
 wget -O $HOME/.cardchaind/config/genesis.json https://server-4.itrocket.net/testnet/cardchain/genesis.json
 wget -O $HOME/.cardchaind/config/addrbook.json  https://server-4.itrocket.net/testnet/cardchain/addrbook.json
+```
 
 # set seeds and peers
 SEEDS="947aa14a9e6722df948d46b9e3ff24dd72920257@cardchain-testnet-seed.itrocket.net:31656"
