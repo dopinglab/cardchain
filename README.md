@@ -53,11 +53,13 @@ wget -O $HOME/.cardchaind/config/genesis.json https://server-4.itrocket.net/test
 wget -O $HOME/.cardchaind/config/addrbook.json  https://server-4.itrocket.net/testnet/cardchain/addrbook.json
 ```
 
-# set seeds and peers
+**set seeds and peers**
+```
 SEEDS="947aa14a9e6722df948d46b9e3ff24dd72920257@cardchain-testnet-seed.itrocket.net:31656"
 PEERS="99dcfbba34316285fceea8feb0b644c4dc67c53b@cardchain-testnet-peer.itrocket.net:31656,ca809647d5d73ef9247e94df133b1fd40ccce827@144.217.68.182:26656,d0bb15daba08a7c84c45d8ee48daeadf42d08a6a@185.144.99.114:26656,d0e4edcdd73a7578b10980b3739a5b7218b7e86f@212.23.222.109:26256,3db8323a132c4dee2e1896fd533787b8a23d95b2@194.163.174.151:26656,734563b2bf39ddcc2c672d3e41aad1d259aca4c7@213.199.35.238:26656,86fe149f801ac75213179be5b56fbd1a1e545c43@202.61.225.157:20656,86484b4d411e2cec602c88ae1262a39ab58ea470@207.180.249.47:26656,8f665b8a8fb1a3c95fb43575a06b114d9ced4a98@84.247.138.148:26656,77aad2057be5289f44c4aa5e9df7c26b86038904@65.109.53.24:31656,1c236641285af7dac88600e43c2ca6505fbea454@65.108.2.180:31656"
 sed -i -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*seeds *=.*/seeds = \"$SEEDS\"/}" \
        -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" $HOME/.cardchaind/config/config.toml
+```
 
 # set custom ports in app.toml
 sed -i.bak -e "s%:1317%:${CARDCHAIN_PORT}317%g;
