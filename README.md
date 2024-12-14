@@ -96,7 +96,8 @@ sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.cardchaind/config/con
 sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $HOME/.cardchaind/config/config.toml
 ```
 
-# create service file
+**create service file**
+```
 sudo tee /etc/systemd/system/Cardchaind.service > /dev/null <<EOF
 [Unit]
 Description=Cardchain node
@@ -111,6 +112,7 @@ LimitNOFILE=65535
 [Install]
 WantedBy=multi-user.target
 EOF
+```
 
 # reset and download snapshot
 Cardchaind tendermint unsafe-reset-all --home $HOME/.cardchaind
