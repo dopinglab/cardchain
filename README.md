@@ -125,7 +125,8 @@ fi
 ```
 
 
-# enable and start service
+**enable and start service**
+```
 sudo systemctl daemon-reload
 sudo systemctl enable Cardchaind
 sudo systemctl restart Cardchaind && sudo journalctl -u Cardchaind -f
@@ -133,6 +134,8 @@ Automatic Installation
 pruning: custom: 100/0/19 | indexer: null
 
 source <(curl -s https://itrocket.net/api/testnet/cardchain/autoinstall/)
+```
+
 Create wallet
 # to create a new wallet, use the following command. don’t forget to save the mnemonic
 Cardchaind keys add $WALLET
