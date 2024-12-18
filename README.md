@@ -142,9 +142,10 @@ Create wallet
 Cardchaind keys add $WALLET
 ```
 
-# to restore exexuting wallet, use the following command
+**to restore exexuting wallet, use the following command**
+```
 Cardchaind keys add $WALLET --recover
-
+```
 # save wallet and validator address
 WALLET_ADDRESS=$(Cardchaind keys show $WALLET -a)
 VALOPER_ADDRESS=$(Cardchaind keys show $WALLET --bech val -a)
