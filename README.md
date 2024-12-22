@@ -187,20 +187,8 @@ while true; do
 done
 ```
 
-Create validator
-Moniker
-Identity
-Details
-I love blockchain ❤️
-Amount, ubpf
-1000000
-Commission rate
-0.1
-Commission max rate
-0.2
-Commission max change rate
-0.01
-Website
+**Create validator**
+```
 Cardchaind tx staking create-validator \
 --amount 1000000ubpf \
 --from $WALLET \
@@ -216,6 +204,8 @@ Cardchaind tx staking create-validator \
 --chain-id cardtestnet-12 \
 --gas auto --gas-adjustment 1.5 \
 -y
+```
+
 Monitoring
 If you want to have set up a monitoring and alert system use our cosmos nodes monitoring guide with tenderduty
 
