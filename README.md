@@ -206,23 +206,17 @@ Cardchaind tx staking create-validator \
 -y
 ```
 
-Monitoring
-If you want to have set up a monitoring and alert system use our cosmos nodes monitoring guide with tenderduty
+**Firewall security**
 
-Security
-To protect you keys please don`t share your privkey, mnemonic and follow basic security rules
-
-Set up ssh keys for authentication
-You can use this guide to configure ssh authentication and disable password authentication on your server
-
-Firewall security
 Set the default to allow outgoing connections, deny all incoming, allow ssh and node p2p port
-
+```
 sudo ufw default allow outgoing 
 sudo ufw default deny incoming 
 sudo ufw allow ssh/tcp 
 sudo ufw allow ${CARDCHAIN_PORT}656/tcp
 sudo ufw enable
+```
+
 Delete node
 sudo systemctl stop Cardchaind
 sudo systemctl disable Cardchaind
