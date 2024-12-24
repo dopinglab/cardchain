@@ -217,10 +217,12 @@ sudo ufw allow ${CARDCHAIN_PORT}656/tcp
 sudo ufw enable
 ```
 
-Delete node
+**Delete node**
+```
 sudo systemctl stop Cardchaind
 sudo systemctl disable Cardchaind
 sudo rm -rf /etc/systemd/system/Cardchaind.service
 sudo rm $(which Cardchaind)
 sudo rm -rf $HOME/.cardchaind
 sed -i "/CARDCHAIN_/d" $HOME/.bash_profile
+```
